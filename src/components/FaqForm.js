@@ -23,20 +23,19 @@ class MyForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <div>
-          <label>Name:</label>
+          <label>Title:</label>
           <input
             type="text"
-            name="name"
-            value={this.state.name}
+            name="title"
+            value={this.state.title}
             onChange={this.handleInputChange}
           />
         </div>
         <div>
-          <label>Email:</label>
+          <label>Description:</label>
           <input
-            type="email"
-            name="email"
-            value={this.state.email}
+            name="description"
+            value={this.state.description}
             onChange={this.handleInputChange}
           />
         </div>
