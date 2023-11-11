@@ -9,18 +9,10 @@ const HelpXForm = () => {
     subtitle: helpXData.subtitle,
     paragraph: helpXData.paragraph,
     imageURL: helpXData.imageURL,
-    imageAtlText: helpXData.title.imageAtlText
+    imageAtlText: helpXData.imageAtlText
   }),
   dispatch = useDispatch();
 
-
-  useEffect(() => {
-    // Retrieve form data from localStorage when the component mounts
-    const storedFormData = localStorage.getItem('helpXFormData');
-    if (storedFormData) {
-      setFormData(JSON.parse(storedFormData));
-    }
-  }, []); // Empty dependency array to run this effect only once
 
   const handleInputChange = (e) => {
     setFormData({
@@ -30,8 +22,7 @@ const HelpXForm = () => {
   };
 
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
 
     dispatch(setHelpXData(helpXFormData));
 

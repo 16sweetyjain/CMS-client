@@ -21,7 +21,7 @@ const parseRequestBody = (helpXData) => {
     paragraph: helpXData.paragraph,
     image : {
         imageURL: helpXData.imageURL,
-        imageAtlText: helpXData.title.imageAtlText
+        imageAtlText: helpXData.imageAtlText
     }
 
     };
@@ -40,7 +40,7 @@ export const addHelpXData = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-gw-auth-id': getState().user.userId
+                'x-gw-auth-id': getState().user?.userId
                  // Add other headers as needed
                 },
                 body: JSON.stringify(helpxRequestBody)

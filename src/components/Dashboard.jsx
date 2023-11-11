@@ -17,8 +17,8 @@ const  Dashboard = () => {
       <div>
         <label>Select a schema:</label>
         <select value={selectedOption} onChange={handleOptionChange}>
-          <option value="FAQ">FAQ</option>
-          <option value="HelpX">HelpX</option>
+          <option value="faq">FAQ</option>
+          <option value="helpX">HelpX</option>
         </select>
       </div>
     );

@@ -19,13 +19,13 @@ function App() {
       </header>
 
       <Routes>
-        <Route exact path="/signup" component={() => <Signup />}/>
-        <Route exact path='/' component={() => <SignIn />} />
+        <Route exact path="/signup" element={<Signup />}/>
+        <Route path='/' element={<SignIn />} />
 
-          <Route path='/logout' component={() => <Logout />} />
-          <Route path='/dashboard' component={() => <Dashboard />} />
-          <Route path='/faq' component={() => <FaqForm/>} />
-          <Route path='/helpX' component={() => <HelpXForm />} />
+          <Route path='/logout' element={<Logout />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/faq' element={<FaqForm/>} />
+          <Route path='/helpX' element={<HelpXForm />} />
 
       </Routes>
     </div>
