@@ -23,6 +23,7 @@ export const addFaqData = () => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'x-gw-auth-id': getState().user.userId
                  // Add other headers as needed
                 },
                 body: JSON.stringify(faq)
@@ -41,6 +42,7 @@ export const getFaqData = (faqId) => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
+                'x-gw-auth-id': getState().user.userId
                  // Add other headers as needed
                 }
             })

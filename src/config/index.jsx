@@ -3,3 +3,5 @@ export const CREATE_FAQ_URL = '/faq';
 export const GET_FAQ_URL = '/faq';
 export const CREATE_HELPX_URL = '/helpX';
 export const GET_HELPX_URL = '/helpX';
+export const CREATE_USER_URL = '/user';
+export const GET_USER_URL = '/user';
