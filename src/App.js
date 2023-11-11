@@ -10,6 +10,8 @@ import HelpXForm from './components/HelpXForm';
 
 
 function App() {
+
+  
   return (
     <div className="App">
       <header className="App-header">
@@ -19,10 +21,12 @@ function App() {
       <Routes>
         <Route exact path="/signup" component={() => <Signup />}/>
         <Route exact path='/' component={() => <SignIn />} />
-        <PrivateRoute  path='/logout' component={() => <Logout />} />
-        <PrivateRoute path='/dashboard' component={() => <Dashboard />} />
-        <PrivateRoute path='/faq' component={() => <FaqForm/>} />
-        <PrivateRoute path='/helpX' component={() => <HelpXForm />} />
+
+          <Route path='/logout' component={() => <Logout />} />
+          <Route path='/dashboard' component={() => <Dashboard />} />
+          <Route path='/faq' component={() => <FaqForm/>} />
+          <Route path='/helpX' component={() => <HelpXForm />} />
+
       </Routes>
     </div>
   );
