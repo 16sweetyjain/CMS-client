@@ -7,7 +7,6 @@ const SignUp = () => {
     const dispatch = useDispatch();
     const [user, setUserDetails] = useState({
         email:'',
-        password:'',
         name: ''
     });
 
@@ -43,18 +42,7 @@ const SignUp = () => {
                                 <label>Email</label>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="input-field col s12 black-text">
-                                <input id="password" type="password" className="validate" value={ user.password } onChange={onChangeHandler}/>
-                                <label>Password</label>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="input-field col s12 black-text">
-                                <input id="passwordConfirmation" type="password" className="validate" value={ user.passwordConfirmation } onChange={onChangeHandler}/>
-                                <label>Confirm Password</label>
-                            </div>
-                        </div>
+
                         <div className="row">
                             <div className="input-field col s12" style = { { textAlign:'center' } }>
                                 <button className="btn btn-large btn-dark" onClick={onSubmit}>Register</button>

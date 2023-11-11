@@ -45,10 +45,10 @@ export const createNewUser = () => {
     };
 }
 
-export const getUserData = (email, password) => {
+export const getUserData = (email) => {
     return (dispatch, getState) => {
 
-        return fetch(`${SERVER_URL}${GET_USER_URL}/${email}/${password}`, {
+        return fetch(`${SERVER_URL}${GET_USER_URL}/${email}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

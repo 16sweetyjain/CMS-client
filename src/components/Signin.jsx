@@ -16,7 +16,7 @@ const SignIn = () => {
     const onSubmit = e => {
         e.preventDefault();
 
-        dispatch(getUserData(user.email, user.password));
+        dispatch(getUserData(user.email));
 
         navigate('/dashboard');
 
@@ -43,12 +43,7 @@ const SignIn = () => {
                                 <label> <b>Email</b> </label>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="input-field col s12 center-align ">
-                                <input id="password" type="password" className="validate" value={ user.password } onChange={ onChangeHandler }/>
-                                <label> <b>Password</b> </label>
-                            </div>
-                        </div>
+            
                         <div className="row">
                             <div className="input-field col s12" style = { { textAlign:'center' } }>
                                 <button style={ { width: '100px', borderRadius: '3px', letterSpacing: '1.5px' } } className="btn btn-large btn-dark" onClick={ onSubmit }>Login</button>
