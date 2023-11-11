@@ -36,10 +36,6 @@ const HelpXForm = () => {
     dispatch(setHelpXData(helpXFormData));
 
     dispatch(addHelpXData());
-
-    localStorage.setItem('helpXFormData', helpXFormData);
-
-    // Handle form submission, e.g., send data to a server or perform some action.
   };
 
 

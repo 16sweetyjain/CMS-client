@@ -30,13 +30,9 @@ const  FaqForm  = () =>  {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    setFaqData(faqFormData);
+    dispatch(setFaqData(faqFormData));
 
     dispatch(addFaqData());
-
-    localStorage.setItem('faqFormData', faqFormData);
-
-    // Handle form submission, e.g., send data to a server or perform some action.
   };
 
 
