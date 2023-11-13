@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {addHelpXData, setHelpXData} from '../actions/HelpXFormActions';
 import { useDispatch, useSelector } from 'react-redux';
+import { debounce } from '../util/debounce';
 
 const HelpXForm = () => {
   const helpXData = useSelector(state => state.helpX);
@@ -20,19 +21,6 @@ const HelpXForm = () => {
       [e.target.name]: e.target.value,
     });
   };
-
-  const debounce = (func, delay) => {
-    let timeoutId;
-    return function (...args) {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-      timeoutId = setTimeout(() => {
-        func(...args);
-      }, delay);
-    };
-  };
-
 
   const handleSubmit = (e) => {
     e.preventDefault();

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {addFaqData, setFaqData} from '../actions/FaqFormActions';
 import { useDispatch, useSelector } from 'react-redux';
+import { debounce } from '../util/debounce';
 
 
 const  FaqForm  = () =>  {
@@ -23,10 +24,10 @@ const  FaqForm  = () =>  {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    dispatch(setFaqData(faqFormData));
-
     dispatch(addFaqData());
   };
+
+  const debouncedSubmit = debounce(handleSubmit, 500);
 
 
     return (
