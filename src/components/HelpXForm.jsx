@@ -22,16 +22,15 @@ const HelpXForm = () => {
   };
 
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    dispatch(setHelpXData(helpXFormData));
-
-    dispatch(addHelpXData());
+    dispatch(addHelpXData(helpXFormData));
   };
 
 
     return (
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={event => handleSubmit(event)}>
         <div>
           <label>Title:</label>
           <input

@@ -30,7 +30,7 @@ const  FaqForm  = () =>  {
 
 
     return (
-      <form onSubmit={handleSubmit()}>
+      <form onSubmit={event => handleSubmit(event)}>
         <div>
           <label>Title:</label>
           <input

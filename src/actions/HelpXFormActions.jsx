@@ -30,9 +30,9 @@ const parseRequestBody = (helpXData) => {
 }
 
 
-export const addHelpXData = () => {
+export const addHelpXData = (helpXFormData) => {
     return (dispatch, getState) => {
-        const helpX = getState().helpX;
+        const helpX = helpXFormData;
 
         const helpxRequestBody = parseRequestBody(helpX);
 
