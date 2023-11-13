@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
 
 const  Dashboard = () => {
-  const [selectedOption, setSelectedOption] = useState('');
+  const [selectedOption, setSelectedOption] = useState('default');
   const navigate = useNavigate();
   
 
@@ -17,6 +17,7 @@ const  Dashboard = () => {
       <div>
         <label>Select a schema:</label>
         <select value={selectedOption} onChange={handleOptionChange}>
+        <option value="default">Select an option</option>
           <option value="faq">FAQ</option>
           <option value="helpX">HelpX</option>
         </select>

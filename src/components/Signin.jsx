@@ -39,8 +39,8 @@ const SignIn = () => {
                         </div>
                         <div className="row">
                             <div className="input-field col s12 center-align ">
+                            <label> <b>Email</b> </label>
                                 <input id="email" type="email" className="validate" value={ user.email } onChange={ onChangeHandler }/>
-                                <label> <b>Email</b> </label>
                             </div>
                         </div>
             

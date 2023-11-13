@@ -21,6 +21,18 @@ const HelpXForm = () => {
     });
   };
 
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return function (...args) {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        func(...args);
+      }, delay);
+    };
+  };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,9 +40,11 @@ const HelpXForm = () => {
     dispatch(addHelpXData(helpXFormData));
   };
 
+  const debouncedSubmit = debounce(handleSubmit, 500);
+
 
     return (
-      <form onSubmit={event => handleSubmit(event)}>
+      <form onSubmit={event => debouncedSubmit(event)}>
         <div>
           <label>Title:</label>
           <input
