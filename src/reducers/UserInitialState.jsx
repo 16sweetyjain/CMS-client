@@ -1,4 +1,4 @@
-export const UsernitialState = {
+export const UserInitialState = {
     user: {} ,
     isUserAuthenticated: false
 }

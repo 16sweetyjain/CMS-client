@@ -8,7 +8,7 @@ const  FaqForm  = () =>  {
   const faqData = useSelector(state => state.faq);
   const [faqFormData, setFormData] = useState({
     title: faqData.title,
-    subtitle: faqData.subtitle,
+    description: faqData.description,
   }),
   dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ const  FaqForm  = () =>  {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    dispatch(addFaqData());
+    dispatch(addFaqData(faqFormData));
   };
 
   const debouncedSubmit = debounce(handleSubmit, 500);

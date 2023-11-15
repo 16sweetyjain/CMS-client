@@ -8,7 +8,7 @@ const SignIn = () => {
     const dispatch = useDispatch();
     const [user, setUserDetails] = useState({
         email:'',
-        password:''
+        name:''
     });
 
     const navigate = useNavigate();
@@ -19,6 +19,13 @@ const SignIn = () => {
         dispatch(getUserData(user.email));
 
         navigate('/dashboard');
+
+    };
+
+    const signUp = e => {
+        e.preventDefault();
+
+        navigate('/signup');
 
     };
 
@@ -43,10 +50,24 @@ const SignIn = () => {
                                 <input id="email" type="email" className="validate" value={ user.email } onChange={ onChangeHandler }/>
                             </div>
                         </div>
+
+                        <div className="row">
+                            <div className="input-field col s12 center-align ">
+                            <label> <b>Name</b> </label>
+                                <input id="name" type="text" className="validate" value={ user.name } onChange={ onChangeHandler }/>
+                            </div>
+                        </div>
             
                         <div className="row">
                             <div className="input-field col s12" style = { { textAlign:'center' } }>
                                 <button style={ { width: '100px', borderRadius: '3px', letterSpacing: '1.5px' } } className="btn btn-large btn-dark" onClick={ onSubmit }>Login</button>
+                            </div>
+                        </div>
+
+                                    
+                        <div className="row">
+                            <div className="input-field col s12" style = { { textAlign:'center' } }>
+                                <button style={ { width: '100px', borderRadius: '3px', letterSpacing: '1.5px' } } className="btn btn-large btn-dark" onClick={ signUp }>Signup</button>
                             </div>
                         </div>
                     </form>

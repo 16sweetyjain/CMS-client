@@ -15,9 +15,8 @@ export const setFaqData = (payload) =>  {
 }
 
 
-export const addFaqData = () => {
+export const addFaqData = (faq) => {
     return (dispatch, getState) => {
-        const faq = getState().faq;
 
         return fetch(`${SERVER_URL}${CREATE_FAQ_URL}`, {
             method: 'POST',
@@ -28,7 +27,8 @@ export const addFaqData = () => {
                 },
                 body: JSON.stringify(faq)
             })
-        .then((response) => {
+            .then(response => response.json())
+            .then(data => {
             dispatch(addFaq(faq));
         })
         .catch(error => console.log(error));
@@ -46,8 +46,9 @@ export const getFaqData = (faqId) => {
                  // Add other headers as needed
                 }
             })
-        .then((response) => {
-            dispatch(setFaqData(response.schema));
+            .then(response => response.json())
+            .then(data => {
+            dispatch(setFaqData(data));
         })
         .catch(error => console.log(error));
     };

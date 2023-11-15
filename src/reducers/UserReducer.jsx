@@ -1,6 +1,6 @@
-import { UsernitialState } from "./UserInitialState";
+import { UserInitialState } from "./UserInitialState";
 
-const userReducer = (state = UsernitialState, action) => {
+const userReducer = (state = UserInitialState, action) => {
   
     let newState = Object.assign({}, state);
 

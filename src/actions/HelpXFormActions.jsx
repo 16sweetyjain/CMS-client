@@ -45,8 +45,9 @@ export const addHelpXData = (helpXFormData) => {
                 },
                 body: JSON.stringify(helpxRequestBody)
             })
-        .then((response) => {
-            dispatch(addHelpX(helpX));
+            .then(response => response.json())
+            .then(data => {
+            dispatch(addHelpX(helpXFormData));
         })
         .catch(error => console.log(error));
     };
@@ -63,8 +64,9 @@ export const getHelpXData = (helpXId) => {
                  // Add other headers as needed
                 }
             })
-        .then((response) => {
-            dispatch(setHelpXData(response.schema));
+            .then(response => response.json())
+            .then(data => {
+            dispatch(setHelpXData(data));
         })
         .catch(error => console.log(error));
     };

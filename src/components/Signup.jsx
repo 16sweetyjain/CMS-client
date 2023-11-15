@@ -14,10 +14,8 @@ const SignUp = () => {
       
     const onSubmit = e => {
         e.preventDefault();
-        
-        dispatch(setUserData(user));
 
-        dispatch(createNewUser({user}));
+        dispatch(createNewUser(user));
 
         navigate('/dashboard');
     };
@@ -38,8 +36,16 @@ const SignUp = () => {
                         </div>
                         <div className="row">
                             <div className="input-field col s12 black-text">
+                            <label>Email</label>
                                 <input id="email" type="email" className="validate" value={ user.email } onChange={onChangeHandler}/>
-                                <label>Email</label>
+    
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="input-field col s12 center-align ">
+                            <label> <b>Name</b> </label>
+                                <input id="name" type="text" className="validate" value={ user.name } onChange={ onChangeHandler }/>
                             </div>
                         </div>
 

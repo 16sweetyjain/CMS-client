@@ -32,12 +32,12 @@ const HelpXForm = () => {
 
 
     return (
-      <form onSubmit={event => debouncedSubmit(event)}>
+      <form onSubmit={event => handleSubmit(event)}>
         <div>
           <label>Title:</label>
           <input
             type="text"
-            name="name"
+            name="title"
             value={helpXFormData.title}
             onChange={handleInputChange}
           />

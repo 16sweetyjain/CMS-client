@@ -22,9 +22,8 @@ export const setUserData = (payload) =>  {
 }
 
 
-export const createNewUser = () => {
+export const createNewUser = (user) => {
     return (dispatch, getState) => {
-        const user = getState().user;
 
         return fetch(`${SERVER_URL}${CREATE_USER_URL}`, {
             method: 'POST',
@@ -34,8 +33,9 @@ export const createNewUser = () => {
                 },
                 body: JSON.stringify(user)
             })
-        .then((response) => {
-            dispatch(createUser(user));
+            .then(response => response.json())
+            .then(data => {
+            dispatch(createUser(data));
             dispatch(isUserAuthenticated(true));
         })
         .catch(error => {
@@ -55,8 +55,10 @@ export const getUserData = (email) => {
                  // Add other headers as needed
                 }
             })
-        .then((response) => {
-            dispatch(setUserData(response.user));
+            .then(response => response.json())
+            .then(data => {
+              // Access the properties of the "user" object
+            dispatch(setUserData(data));
             dispatch(isUserAuthenticated(true));
         })
         .catch(error => {
