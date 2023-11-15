@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createNewUser, setUserData } from '../actions/UserActions';
 import { useNavigate } from 'react-router';
+import './Form.css';
+
 
 const SignUp = () => {
     const dispatch = useDispatch();
@@ -28,7 +30,7 @@ const SignUp = () => {
         <div>
             <div  style={ { height: '90vh' } } className='container'>
                 <div className="row"  style = { { display: 'flex', justifyContent: 'center', alignItems: 'center' } }>
-                    <form className=" col s12">
+                    <form className=" my-form">
                         <div className="row">
                             <div className="input-field col s12 black-text" style = { { display: 'flex', justifyContent: 'center', alignItems: 'center' } }>
                                 <h3>Register</h3>

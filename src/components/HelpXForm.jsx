@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {addHelpXData, setHelpXData} from '../actions/HelpXFormActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { debounce } from '../util/debounce';
+import './Form.css';
 
 const HelpXForm = () => {
   const helpXData = useSelector(state => state.helpX);
@@ -32,7 +33,7 @@ const HelpXForm = () => {
 
 
     return (
-      <form onSubmit={event => handleSubmit(event)}>
+      <form className="my-form" onSubmit={event => handleSubmit(event)}>
         <div>
           <label>Title:</label>
           <input

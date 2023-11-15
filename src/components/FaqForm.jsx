@@ -3,6 +3,8 @@ import {addFaqData, setFaqData} from '../actions/FaqFormActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { debounce } from '../util/debounce';
 
+import './Form.css';
+
 
 const  FaqForm  = () =>  {
   const faqData = useSelector(state => state.faq);
@@ -31,7 +33,7 @@ const  FaqForm  = () =>  {
 
 
     return (
-      <form onSubmit={event => handleSubmit(event)}>
+      <form className="my-form"  onSubmit={event => handleSubmit(event)}>
         <div>
           <label>Title:</label>
           <input

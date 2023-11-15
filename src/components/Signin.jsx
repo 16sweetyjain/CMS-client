@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {getUserData } from '../actions/UserActions';
 import { useNavigate } from 'react-router';
+import './Form.css';
+
 
 const SignIn = () => {
 
@@ -38,7 +40,7 @@ const SignIn = () => {
         <div>
             <div  style={ { height: '90vh' } } className='container'>
                 <div className="row " >
-                    <form className="col s12" style  = {{ marginTop:'100px' }}>
+                    <form className="my-form" style  = {{ marginTop:'100px' }}>
                         <div className="row">
                             <div className="input-field col s12 black-text" style = { { display: 'flex', justifyContent: 'center', alignItems: 'center' } }>
                                 <h3>Login</h3>
@@ -47,7 +49,7 @@ const SignIn = () => {
                         <div className="row">
                             <div className="input-field col s12 center-align ">
                             <label> <b>Email</b> </label>
-                                <input id="email" type="email" className="validate" value={ user.email } onChange={ onChangeHandler }/>
+                                <input id="email" type="email" className="validate" value={ user.email } onChange={ onChangeHandler } />
                             </div>
                         </div>
 
@@ -58,6 +60,7 @@ const SignIn = () => {
                             </div>
                         </div>
             
+                        <div className='buttonGroup'>
                         <div className="row">
                             <div className="input-field col s12" style = { { textAlign:'center' } }>
                                 <button style={ { width: '100px', borderRadius: '3px', letterSpacing: '1.5px' } } className="btn btn-large btn-dark" onClick={ onSubmit }>Login</button>
@@ -69,6 +72,8 @@ const SignIn = () => {
                             <div className="input-field col s12" style = { { textAlign:'center' } }>
                                 <button style={ { width: '100px', borderRadius: '3px', letterSpacing: '1.5px' } } className="btn btn-large btn-dark" onClick={ signUp }>Signup</button>
                             </div>
+                        </div>
+
                         </div>
                     </form>
                 </div>
