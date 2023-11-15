@@ -40,7 +40,7 @@ export const addHelpXData = (helpXFormData) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'x-gw-auth-id': getState().user?.userId
+                'x-gw-auth-id': getState().user.user.userId
                  // Add other headers as needed
                 },
                 body: JSON.stringify(helpxRequestBody)
@@ -60,7 +60,7 @@ export const getHelpXData = (helpXId) => {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'x-gw-auth-id': getState().user.userId
+                'x-gw-auth-id': getState().user.user.userId
                  // Add other headers as needed
                 }
             })
