@@ -6,7 +6,7 @@ const helpXReducer = (state = HelpXFormInitialState, action) => {
 
     switch (action.type) {
         case 'ADD_HELPX':
-            newState.helpX = action.payload.helpX;
+            newState.helpX = action.payload;
             break;
 
         case 'SET_HELPX_DATA' :

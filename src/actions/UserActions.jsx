@@ -35,7 +35,7 @@ export const createNewUser = (user) => {
             })
             .then(response => response.json())
             .then(data => {
-            dispatch(createUser(data));
+            dispatch(createUser(data.user));
             dispatch(isUserAuthenticated(true));
         })
         .catch(error => {

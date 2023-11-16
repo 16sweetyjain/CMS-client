@@ -17,7 +17,7 @@ export const setHelpXData = (payload) =>  {
 const parseRequestBody = (helpXData) => {
     const reqBody =  {
     title: helpXData.title,
-    subtitle: helpXData.subtitle,
+    subTitle: helpXData.subtitle,
     paragraph: helpXData.paragraph,
     image : {
         imageURL: helpXData.imageURL,
